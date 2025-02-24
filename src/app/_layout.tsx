@@ -5,7 +5,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-import { useColorScheme } from '@/components/useColorScheme';
+import { useColorScheme } from '@/src/components/useColorScheme';
 export {
   ErrorBoundary,
 } from 'expo-router';
@@ -15,7 +15,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    SpaceMono: require('../assets/fonts/Poppins-Medium.ttf'),
     ...FontAwesome.font,
   });
 

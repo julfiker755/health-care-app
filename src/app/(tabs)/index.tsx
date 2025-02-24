@@ -1,11 +1,16 @@
 import { StyleSheet } from 'react-native';
-import { Text, View } from '@/components/Themed';
-
+import { Text, View } from '@/src/components/Themed';
+import { Image } from 'expo-image';
 
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
+     <Image
+        source={``}
+        contentFit="cover"
+        transition={1000}
+      />
       <Text style={styles.title}>Tab One</Text>
     </View>
   );
