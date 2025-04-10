@@ -18,15 +18,13 @@ export default function Login() {
 
   // Zod schema for form validation
   const schema = z.object({
-    firstName: z.string().min(1, "First name is required"),
-    lastName: z.string().min(1, "Last name is required"),
+    phone: z.string().min(1, "Phone is required"),
   });
 
   const from = useForm({
     resolver: zodResolver(schema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
+      phone: "",
     },
   });
 
