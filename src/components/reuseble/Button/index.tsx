@@ -7,15 +7,22 @@ import {
 import React, { ReactNode } from "react";
 
 interface ButtonProps {
-  children: ReactNode;
+  children?: ReactNode;
   onPress?: (event: GestureResponderEvent) => void;
   style?: any;
+  label?: string;
 }
 
-export default function Button({ children, onPress, style }: ButtonProps) {
+export default function Button({
+  children,
+  onPress,
+  style,
+  label,
+}: ButtonProps) {
   return (
     <TouchableOpacity onPress={onPress} style={[styles.button, style]}>
-      <Text style={styles.text}>{children}</Text>
+      {label && <Text style={styles.text}>{label}</Text>}
+      {children && children}
     </TouchableOpacity>
   );
 }

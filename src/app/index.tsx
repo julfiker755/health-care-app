@@ -60,9 +60,11 @@ export default function Home() {
             </Text>
           </View>
           <View style={{ alignItems: "center", marginBottom: 50 }}>
-            <Button onPress={() => router.push("/login")}>Get Started</Button>
+            <Button
+              label="Get Started"
+              onPress={() => router.push("/login")}
+            ></Button>
           </View>
-          o
         </View>
       </ImageBackground>
     </View>

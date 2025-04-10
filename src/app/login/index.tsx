@@ -22,18 +22,13 @@ export default function Login() {
     lastName: z.string().min(1, "Last name is required"),
   });
 
-  const methods = useForm({
+  const from = useForm({
     resolver: zodResolver(schema),
     defaultValues: {
       firstName: "",
       lastName: "",
     },
   });
-
-  const {
-    handleSubmit,
-    formState: { errors, isValid },
-  } = methods;
 
   // Handle form submission
   const onSubmit = (data: any) => {
@@ -70,8 +65,7 @@ export default function Login() {
             backgroundColor: "white",
             borderTopLeftRadius: 20,
             borderTopRightRadius: 20,
-            justifyContent: "space-between",
-            padding: 20,
+            justifyContent: "center",
           }}
         >
           <View style={{ alignItems: "center" }}>
@@ -86,20 +80,45 @@ export default function Login() {
               Log in or sign up
             </Text>
           </View>
-          <FormProvider {...methods}>
+          <FormProvider {...from}>
             <Input
-              label="First Name"
-              name="firstName"
-              placeholder="Enter your first name"
+              style={{
+                paddingVertical: 10,
+              }}
+              name="phone"
+              placeholder="Enter your phone"
             />
-            <Input
-              label="Last Name"
-              name="lastName"
-              placeholder="Enter your last name"
-            />
+            <View
+              style={{
+                alignItems: "center",
+                marginTop: 20,
+              }}
+            >
+              <Button
+                label="Sign In"
+                style={{ height: 40 }}
+                onPress={from.handleSubmit(onSubmit)}
+              ></Button>
+            </View>
           </FormProvider>
-          <View style={{ alignItems: "center", marginBottom: 50 }}>
-            <Button onPress={handleSubmit(onSubmit)}>Sign In</Button>
+          <View style={{ alignItems: "center", marginTop: 20 }}>
+            <Button
+              style={{
+                height: 40,
+                flexDirection: "row",
+                gap: 2,
+                backgroundColor: "white",
+                borderWidth: 1,
+                borderRadius: 4,
+                borderCurve: "continuous",
+                borderColor: "#e0e0e0",
+              }}
+            >
+              <Image source={require("../../assets/images/google_icon.png")} />
+              <Text style={{ marginLeft: 2, fontSize: 16 }}>
+                Contiune width google
+              </Text>
+            </Button>
           </View>
         </View>
       </View>

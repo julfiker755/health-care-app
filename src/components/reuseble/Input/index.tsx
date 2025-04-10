@@ -1,15 +1,18 @@
-import { Text, View, TextInput } from "react-native";
+import { Text, View, TextInput, StyleSheet } from "react-native";
 import { Controller, useFormContext } from "react-hook-form";
-import React from "react";
+import React, { useState } from "react";
 
 interface inputProps {
-  label: string;
+  label?: string;
   name: string;
   placeholder?: string;
+  style?: any;
 }
 
-export default function Input({ label, name, placeholder }: inputProps) {
+export default function Input({ label, name, placeholder, style }: inputProps) {
+  const [borderColor, setBorderColor] = useState("#e0e0e0");
   const { control } = useFormContext();
+
   return (
     <Controller
       control={control}
@@ -22,28 +25,45 @@ export default function Input({ label, name, placeholder }: inputProps) {
         fieldState: { error },
       }) => (
         <View>
-          {label && (
-            <Text style={{ fontSize: 20, marginBottom: 4, fontWeight: "500" }}>
-              {label}
-            </Text>
-          )}
+          {label && <Text style={styles.label}>{label}</Text>}
           <TextInput
-            style={{
-              borderWidth: 1,
-              padding: 5,
-              borderRadius: 3,
-              fontSize: 16,
-              borderColor: '#2E363F"',
-              borderCurve: "continuous",
-            }}
+            style={[styles.input, { borderColor }, style]}
             placeholder={placeholder}
-            onBlur={onBlur}
-            onChangeText={(value) => onChange(value)}
+            onFocus={() => setBorderColor("#0e82fd")}
+            onBlur={() => {
+              setBorderColor("#e0e0e0");
+              onBlur();
+            }}
+            onChangeText={onChange}
             value={value}
           />
-          {error?.message && <Text>{error?.message}</Text>}
+          {error?.message && (
+            <Text style={styles.errorText}>{error.message} </Text>
+          )}
         </View>
       )}
     />
   );
 }
+
+const styles = StyleSheet.create({
+  label: {
+    fontSize: 16,
+    marginBottom: 4,
+    fontWeight: "500",
+  },
+  input: {
+    width: "95%",
+    borderWidth: 1,
+    padding: 5,
+    borderRadius: 3,
+    fontSize: 16,
+    borderCurve: "continuous",
+    margin: "auto",
+  },
+  errorText: {
+    color: "red",
+    marginTop: 3,
+    textAlign: "right",
+  },
+});
