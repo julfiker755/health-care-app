@@ -40,5 +40,8 @@
     "react-test-renderer": "18.3.1",
     "typescript": "~5.3.3"
   },
+  "expo": {
+    "jsEngine": "hermes"
+  },
   "private": true
 }
