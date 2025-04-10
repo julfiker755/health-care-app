@@ -4,6 +4,8 @@ import { useNavigation } from "expo-router";
 import { useForm, FormProvider } from "react-hook-form";
 import Input from "@/src/components/reuseble/Input";
 import Button from "@/src/components/reuseble/Button";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 
 export default function Login() {
   const navigation = useNavigation();
@@ -14,7 +16,14 @@ export default function Login() {
     });
   }, []);
 
+  // Zod schema for form validation
+  const schema = z.object({
+    firstName: z.string().min(1, "First name is required"),
+    lastName: z.string().min(1, "Last name is required"),
+  });
+
   const methods = useForm({
+    resolver: zodResolver(schema),
     defaultValues: {
       firstName: "",
       lastName: "",
