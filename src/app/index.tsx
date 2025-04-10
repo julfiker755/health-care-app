@@ -1,8 +1,10 @@
 import { View, Text, ImageBackground, Image } from "react-native";
 import React from "react";
 import Button from "../components/reuseble/Button";
+import { useRouter } from "expo-router";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <View style={{ flex: 1 }}>
       <ImageBackground
@@ -34,9 +36,15 @@ export default function Home() {
         >
           <View style={{ alignItems: "center" }}>
             <Text
-              style={{ fontSize: 24, fontWeight: "bold", paddingVertical: 10 }}
+              style={{
+                fontSize: 26,
+                fontWeight: "bold",
+                paddingVertical: 10,
+                textAlign: "center",
+              }}
             >
-              Welcome to Medikart
+              More Comfortable Chat
+              {`\n`} With the Doctor
             </Text>
             <Text
               style={{
@@ -44,15 +52,17 @@ export default function Home() {
                 paddingVertical: 10,
                 textAlign: "center",
                 color: "gray",
+                paddingHorizontal: 10,
               }}
             >
-              Book appointments with your favourite doctor
+              Book an appointment with doctor. Chat with doctor via appointment
+              letter and get consultation.
             </Text>
           </View>
-
           <View style={{ alignItems: "center", marginBottom: 50 }}>
-            <Button>Get Started</Button>
+            <Button onPress={() => router.push("/login")}>Get Started</Button>
           </View>
+          o
         </View>
       </ImageBackground>
     </View>
