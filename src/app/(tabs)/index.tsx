@@ -1,34 +1,20 @@
-import { StyleSheet } from 'react-native';
-import { Text, View } from '@/src/components/Themed';
-import { Image } from 'expo-image';
+import { StyleSheet } from "react-native";
+import { Text, View } from "@/src/components/Themed";
+import { Image } from "expo-image";
+import { colors } from "@/src/constants/Colors";
+import Header from "@/src/components/common/header";
 
-
-export default function TabOneScreen() {
+export default function Home() {
   return (
-    <View style={styles.container}>
-     <Image
-        source={``}
-        contentFit="cover"
-        transition={1000}
-      />
-      <Text style={styles.title}>Tab One</Text>
+    <View style={{ flex: 1, backgroundColor: "white" }}>
+      <Header />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+    height: "25%",
+    backgroundColor: colors.primary,
   },
 });

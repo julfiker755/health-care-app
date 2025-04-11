@@ -31,7 +31,7 @@ export default function Login() {
 
   // Handle form submission
   const onSubmit = (data: any) => {
-    if (data.phone?.length > 11) {
+    if (data.phone?.length > 10) {
       router.push(`/otp/${data.phone}`);
     } else {
       from.setError("phone", {
