@@ -7,9 +7,16 @@ interface inputProps {
   name: string;
   placeholder?: string;
   style?: any;
+  keyboardType?: "default" | "numeric" | "email-address" | "phone-pad";
 }
 
-export default function Input({ label, name, placeholder, style }: inputProps) {
+export default function Input({
+  label,
+  name,
+  placeholder,
+  style,
+  keyboardType,
+}: inputProps) {
   const [borderColor, setBorderColor] = useState("#e0e0e0");
   const { control } = useFormContext();
 
@@ -36,6 +43,7 @@ export default function Input({ label, name, placeholder, style }: inputProps) {
             }}
             onChangeText={onChange}
             value={value}
+            keyboardType={keyboardType || "default"}
           />
           {error?.message && (
             <Text style={styles.errorText}>{error.message} </Text>
@@ -64,6 +72,7 @@ const styles = StyleSheet.create({
   errorText: {
     color: "red",
     marginTop: 3,
+    paddingRight: 8,
     textAlign: "right",
   },
 });

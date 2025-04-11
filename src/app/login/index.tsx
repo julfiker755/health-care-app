@@ -1,6 +1,6 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image } from "react-native";
 import React, { useEffect } from "react";
-import { useNavigation } from "expo-router";
+import { useNavigation, useRouter } from "expo-router";
 import { useForm, FormProvider } from "react-hook-form";
 import Input from "@/src/components/reuseble/Input";
 import Button from "@/src/components/reuseble/Button";
@@ -9,6 +9,7 @@ import { z } from "zod";
 
 export default function Login() {
   const navigation = useNavigation();
+  const router = useRouter();
 
   useEffect(() => {
     navigation.setOptions({
@@ -30,8 +31,14 @@ export default function Login() {
 
   // Handle form submission
   const onSubmit = (data: any) => {
-    console.log("Form data submitted: ", data);
-    // Replace console log with actual login logic
+    if (data.phone?.length > 11) {
+      router.push(`/otp/${data.phone}`);
+    } else {
+      from.setError("phone", {
+        type: "manual",
+        message: "Enter the 11-digit number",
+      });
+    }
   };
 
   return (
@@ -85,6 +92,7 @@ export default function Login() {
               }}
               name="phone"
               placeholder="Enter your phone"
+              keyboardType="numeric"
             />
             <View
               style={{
