@@ -1,10 +1,6 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from "react";
+import DoctorsList from "../doctor-list";
 
 export default function Doctors() {
-  return (
-    <View>
-      <Text>Doctors</Text>
-    </View>
-  )
+  return <DoctorsList />;
 }
