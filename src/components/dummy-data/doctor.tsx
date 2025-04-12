@@ -1,3 +1,6 @@
+export const doctorImg =
+  "https://images.pexels.com/photos/5214995/pexels-photo-5214995.jpeg";
+
 export const doctors = [
   {
     id: "1",

@@ -9,9 +9,10 @@ import {
 } from "react-native";
 import React, { useEffect } from "react";
 import { doctors } from "@/src/components/dummy-data/doctor";
-import { useNavigation } from "expo-router";
+import { useNavigation, useRouter } from "expo-router";
 
 export default function DoctorsList() {
+  const router = useRouter();
   const navigation = useNavigation();
   useEffect(() => {
     navigation.setOptions({
@@ -28,7 +29,10 @@ export default function DoctorsList() {
         columnWrapperStyle={{ justifyContent: "space-between", rowGap: 8 }}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <TouchableOpacity style={styles.cardContainer}>
+          <TouchableOpacity
+            onPress={() => router.push("/doctor-details")}
+            style={styles.cardContainer}
+          >
             <Image source={{ uri: item.image }} style={styles.image} />
             <View
               style={{

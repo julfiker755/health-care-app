@@ -9,8 +9,10 @@ import {
 } from "react-native";
 import React from "react";
 import { doctors } from "../../dummy-data/doctor";
+import { useRouter } from "expo-router";
 
 export default function Doctors() {
+  const router = useRouter();
   return (
     <View style={styles.container}>
       <FlatList
@@ -20,7 +22,10 @@ export default function Doctors() {
         horizontal
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <TouchableOpacity style={styles.cardContainer}>
+          <TouchableOpacity
+            onPress={() => router.push("/doctor-details")}
+            style={styles.cardContainer}
+          >
             <Image source={{ uri: item.image }} style={styles.image} />
             <View
               style={{
