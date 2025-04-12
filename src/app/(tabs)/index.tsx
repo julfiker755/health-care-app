@@ -4,6 +4,7 @@ import { colors } from "@/src/constants/Colors";
 import Header from "@/src/components/common/header";
 import Categories from "@/src/components/common/categories";
 import FavouriteDoctor from "@/src/components/common/favourite-doctor";
+import Doctors from "@/src/components/common/doctors";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Header />
       <Categories />
       <FavouriteDoctor />
+      <Doctors />
     </View>
   );
 }
