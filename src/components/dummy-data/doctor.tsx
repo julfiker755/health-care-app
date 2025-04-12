@@ -1,7 +1,7 @@
 export const doctors = [
   {
     id: "1",
-    name: "Dr. Sarah Thompson",
+    name: "Dr. Max Jordan",
     specialty: "1",
     phone: "123-456-7890",
     email: "sarah.thompson@medikart.com",
@@ -13,7 +13,7 @@ export const doctors = [
   },
   {
     id: "2",
-    name: "Dr. John Smith",
+    name: "Dr. Lisa Powers",
     specialty: "2",
     phone: "234-567-8901",
     email: "john.smith@medikart.com",
@@ -25,7 +25,7 @@ export const doctors = [
   },
   {
     id: "8",
-    name: "Dr. James Miller",
+    name: "Dr. Nina Green",
     specialty: "8",
     phone: "890-123-4567",
     email: "james.miller@medikart.com",
@@ -37,7 +37,7 @@ export const doctors = [
   },
   {
     id: "9",
-    name: "Dr. Sophia Martinez",
+    name: "Dr. Carl Davis",
     specialty: "9",
     phone: "901-234-5678",
     email: "sophia.martinez@medikart.com",
@@ -49,7 +49,7 @@ export const doctors = [
   },
   {
     id: "10",
-    name: "Dr. William Anderson",
+    name: "Dr. Alan Price",
     specialty: "10",
     phone: "012-345-6789",
     email: "william.anderson@medikart.com",
@@ -61,7 +61,7 @@ export const doctors = [
   },
   {
     id: "4",
-    name: "Dr. Michael Lee",
+    name: "Dr. Emma Blake",
     specialty: "4",
     phone: "456-789-0123",
     email: "michael.lee@medikart.com",
@@ -73,7 +73,7 @@ export const doctors = [
   },
   {
     id: "5",
-    name: "Dr. Anna Garcia",
+    name: "Dr. Sean Burns",
     specialty: "5",
     phone: "567-890-1234",
     email: "anna.garcia@medikart.com",
@@ -85,7 +85,7 @@ export const doctors = [
   },
   {
     id: "6",
-    name: "Dr. David Wilson",
+    name: "Dr. Ruby Stone",
     specialty: "6",
     phone: "678-901-2345",
     email: "david.wilson@medikart.com",
@@ -97,7 +97,7 @@ export const doctors = [
   },
   {
     id: "7",
-    name: "Dr. Olivia Brown",
+    name: "Dr. Tony Grant",
     specialty: "7",
     phone: "789-012-3456",
     email: "olivia.brown@medikart.com",
