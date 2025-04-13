@@ -16,6 +16,7 @@ export default function DoctorDetails() {
       title: "Doctor Profile",
     });
   }, [navigation]);
+
   const metrisDoctor = [
     {
       title: "Patients",
